@@ -1,9 +1,33 @@
 package org.sigspl.analysis.jira.models;
 
-public class Issue {
+import org.sigspl.analysis.commons.ifaces.IAsset;
+
+public class Issue implements IAsset{
 	
-	public String key;
-	public String title;
-	public String text;
+	public String id="";
+	public String name="";
+	public String text="";
+	
+	
+	public String toString()
+	{
+		return name + "\n"+ text;
+	}
+
+
+	public String getName() {
+
+		return name;
+	}
+	
+	public String getID() {
+
+		return id;
+	}
+	
+	public String getCompoundIdentificator ()
+	{
+		return getID() + " " + getName(); 
+	}
 
 }
